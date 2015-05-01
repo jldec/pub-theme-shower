@@ -1,4 +1,6 @@
 env
+out
+*.html
 *.png
 *.rdb
 *.seed

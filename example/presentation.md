@@ -1,9 +1,8 @@
-# Presentation Title
-Presentation sub-title
+Intro text not included in presentation
 
-### Cover-slide Title
-Cover-slide sub-title
+### Title
 ![](/images/ice.jpg)
+sub-title
 
 ### Slide 1: quote
 

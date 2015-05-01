@@ -24,19 +24,20 @@ pub -m -t shower-ribbon
 
 
 ### sample markdown
-- this sample is included in the [repo](git://github.com/jldec/pub-theme-shower-ribbon.git).
-- to see the rendered presentation run `pub` in the example directory
-- The first heading after the main heading at the top will be interpreted as the cover slide
+- this sample is included in the [repo](example).
+- to see the rendered presentation run `pub` in the example directory and point your browser to
+  [](http://localhost:3001/presentation)
+- The first heading will be interpreted as a cover slide if it is followed by a markdown `![](image)`.
+  Avoid putting the first heading at the top the file (or it will become the page url).
 - A slide with no text (slide 2 below) will be rendered with *shout* style (large centered text)
 
 
 ```markdown
-# Presentation Title
-Presentation sub-title
+Intro text not included in presentation
 
-### Cover-slide Title
-Cover-slide sub-title
+### Title
 ![](/images/ice.jpg)
+sub-title
 
 ### Slide 1: quote
 
@@ -67,6 +68,7 @@ david deutsch
 | abc    | def    |   right aligned |
 | abc    | def    |   right aligned |
 | abc    | def    |   right aligned |
+
 ```
 
 

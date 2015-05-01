@@ -21,7 +21,9 @@ module.exports = function(generator) {
         }
       })
 
-      page._fragments[0].class = ' cover';
+      if(/^\!\[/m.test(page._fragments[0]._txt)) {
+        page._fragments[0].class = ' cover';
+      }
 
     });
 

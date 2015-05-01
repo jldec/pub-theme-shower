@@ -4,7 +4,7 @@ var opts = module.exports = {
     {
       path:'.',
       glob:'*.md',
-      fragmentDelim:'md-headings', // pub -m
+      fragmentDelim:'md-headings', // pub -m, required for this theme
       css:'/css/extra.css',        // extra styles
       writable:true
     }
@@ -12,7 +12,8 @@ var opts = module.exports = {
 
   staticPaths: [
     { path:'./images', route:'/images' },
-    { path:'./css', route:'/css' }
+    { path:'./css', route:'/css' },
+    { path:'.', glob:'*.html' }   // for testing html output
   ],
 
   themes: 'shower-ribbon'

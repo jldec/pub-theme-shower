@@ -1,4 +1,6 @@
 env
+out/
+*.html
 *.rdb
 *.seed
 *.log
