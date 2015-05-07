@@ -6,7 +6,7 @@ HTML presentations using markdown.
 ![](images/shower-screen.png)
 
 ### installation
-This theme requires pub-server v1.1
+This theme requires pub-server v1.2
 
 ```sh
 npm install -g pub-server

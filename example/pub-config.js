@@ -1,3 +1,7 @@
+// to clone this example:
+// npm install the theme and
+// and replace '..' below with themes: 'pub-theme-shower-ribbon'
+
 var opts = module.exports = {
 
   sources: [
@@ -12,10 +16,9 @@ var opts = module.exports = {
 
   staticPaths: [
     { path:'./images', route:'/images' },
-    { path:'./css', route:'/css' },
-    { path:'.', glob:'*.html' }   // for testing html output
+    { path:'./css',    route:'/css' }
   ],
 
-  themes: 'shower-ribbon'
+  themes: '..'
 
 }
