@@ -6,14 +6,16 @@
 <meta name="viewport" content="width=792">
 <meta http-equiv="x-ua-compatible" content="ie=edge">
 <title>{{name}}</title>
-<link rel="stylesheet" href="/pub-theme-shower-ribbon/styles/screen.css">
-{{{extra-css}}}
+<link rel="stylesheet" href="{{relPath}}/shower/ribbon/styles/screen.css">
+<link rel="stylesheet" href="{{relPath}}/css/nav.css">
+{{#if _file.source.css}}<link rel="stylesheet" href="{{relPath}}{{_file.source.css}}">{{/if}}
 </head>
-<body class="list">
+<body class="list {{href-slug}}">
+<nav>{{{partial 'nav'}}}</nav>
 <div data-render-page="{{page}}">{{{renderPage}}}</div>
 <div class="progress"><div></div></div>
 <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
-<script src="/pub-theme-shower-ribbon/shower.min.js"></script>
+<script src="{{relPath}}/shower/shower.min.js"></script>
 {{{pub-ux}}}
 </body>
 </html>

@@ -6,11 +6,10 @@ HTML presentations using markdown.
 ![](images/shower-screen.png)
 
 ### installation
-This theme requires pub-server
+This theme requires pub-server v1.1
 
 ```sh
 npm install -g pub-server
-npm install pub-theme-shower-ribbon
 ```
 
 
@@ -19,7 +18,9 @@ npm install pub-theme-shower-ribbon
 - create your `presentation.md` in a new directory, then:
 
 ```sh
-pub -m -t shower-ribbon
+npm install pub-theme-shower-ribbon
+
+  pub -m -t shower-ribbon
 ```
 
 - open your browser on http://localhost:3001/
@@ -33,14 +34,14 @@ pub -m -t shower-ribbon
 pub -m -t shower-ribbon -O
 ```
 
-- `-O` generates the presentation html and copies a set static files into `./out`
-
+- `-O` generates `presentation.html` and copies the rest of the static files into `./out`
+- this directory can be served by gh-pages or by running `pub -s .` in the output directory.
 
 ### sample markdown
 - this sample is included in the [repo](example).
 - to see the rendered presentation run `pub` in the `example` directory and point your browser to
   [](http://localhost:3001/presentation)
-- to generate and then serve the static html output, use `pub -O` then run `pub` in `example/out`
+- to generate and then serve the static html output, use `pub -O` then run `pub -s .` in `example/out`
 - The first heading will be interpreted as a cover slide if it is followed by a markdown `![](image)`.
   Avoid putting the first heading at the top the file (or it will become the page url).
 - A slide with no text (slide 2 below) will be rendered with *shout* style (large centered text)

@@ -7,7 +7,9 @@ module.exports = function(generator) {
 
   hb.registerHelper('extra-css', function(frame) {
     if (this._file.source.css) {
-      return '<link rel="stylesheet" href="' + this._file.source.css + '">';
+      return '<link rel="stylesheet" href="' +
+        u.relPath(this._href) +
+        this._file.source.css + '">';
     }
   });
 
