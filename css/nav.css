@@ -1,1 +1,16 @@
-nav { max-width:320px; text-align:right; float:right; }
+#nav > ul { position:fixed; left:15px; top:15px; z-index:100 }
+
+#nav > ul > li { height:34px; text-align:center; line-height:0.9; padding:4px 12px; color:#444; font-size:1.4em; background-color:#999; cursor:pointer; }
+
+#nav > ul > li:hover { color:#fff; opacity:1; }
+
+#nav > ul > li > ul { position:absolute; top:40px; left:-1000px; background-color:#ddd; text-align:left; padding-bottom:20px;  z-index:200 }
+
+#nav > ul:hover > li > ul  { left:0px; }
+
+#nav a { display:block; line-height:1.6; padding:0 20px 0 8px; font-size:20px; text-decoration:none; background:none; white-space:nowrap; }
+
+#nav a:hover { color:#eee; background-color:#777; }
+
+.full #nav > ul > li { opacity:0.3; }
+.full #nav > ul > li:hover { opacity:1; }

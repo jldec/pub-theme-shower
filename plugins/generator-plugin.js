@@ -5,6 +5,15 @@ module.exports = function(generator) {
   var sources = opts.sources;
   var hb = generator.handlebars;
 
+  hb.registerHelper('menu', function(frame) {
+    return this.menu || '=';
+  });
+
+  hb.registerHelper('body-attr', function(frame) {
+    return this['body-attr'] ||
+      'class="list ' + u.escape(u.slugify(this._href.slice(1))) + '"'
+  });
+
   hb.registerHelper('extra-css', function(frame) {
     if (this._file.source.css) {
       return '<link rel="stylesheet" href="' +
@@ -23,7 +32,9 @@ module.exports = function(generator) {
         }
       })
 
-      if(/^\!\[/m.test(page._fragments[0]._txt)) {
+      var first = page._fragments && page._fragments[0];
+
+      if (first && /^\!\[/m.test(first._txt)) {
         page._fragments[0].class = ' cover';
       }
 

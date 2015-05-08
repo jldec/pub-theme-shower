@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{href-slug}}">
 <head>
 <meta charset="utf-8">
 <meta name="robots" content="noindex, nofollow">
@@ -10,8 +10,8 @@
 <link rel="stylesheet" href="{{relPath}}/css/nav.css">
 {{#if _file.source.css}}<link rel="stylesheet" href="{{relPath}}{{_file.source.css}}">{{/if}}
 </head>
-<body class="list {{href-slug}}">
-<nav>{{{partial 'nav'}}}</nav>
+<body {{{body-attr}}}>
+{{{partial 'nav'}}}
 {{{renderPage}}}
 <div class="progress"><div></div></div>
 <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
