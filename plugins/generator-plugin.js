@@ -5,41 +5,114 @@ module.exports = function(generator) {
   var sources = opts.sources;
   var hb = generator.handlebars;
 
-  hb.registerHelper('menu', function(frame) {
-    return this.menu || '=';
-  });
-
-  hb.registerHelper('body-attr', function(frame) {
-    return this['body-attr'] ||
-      'class="list ' + u.escape(u.slugify(this._href.slice(1))) + '"'
-  });
-
-  hb.registerHelper('extra-css', function(frame) {
-    if (this._file.source.css) {
-      return '<link rel="stylesheet" href="' +
-        u.relPath(this._href) +
-        this._file.source.css + '">';
-    }
-  });
-
+  // apply page-mutations to pages from sources[0]
   generator.on('pages-ready', function() {
 
     u.each(generator.sourcePage$[sources[0].name], function(page) {
 
+      // if no text below markdown heading use 'shout' class
       u.each(page._fragments, function(fragment) {
-        if (0 === u.trim(fragment._txt).length) {
+        if (0 === u.trim(fragment._txt.replace(/^.*$/m,'')).length) {
           fragment.class = ' shout';
         }
-      })
+      });
 
+      // if first slide contains an image, use 'cover' class
       var first = page._fragments && page._fragments[0];
-
       if (first && /^\!\[/m.test(first._txt)) {
         page._fragments[0].class = ' cover';
       }
 
     });
+  });
 
+  // prevent single-page navigation in editor - main-layout is page-sensitive
+  generator.on('update-view', function(path, query, hash, nav) {
+    if (nav) { window.location = path; }
+  });
+
+  hb.registerHelper('menu', function(frame) {
+    return this.menu || '=';
+  });
+
+  function lang(page) {
+    return page.lang || u.slugify(page._href.slice(1)) || 'en';
+  }
+
+  function rtl(page) {
+    var code = lang(page).replace(/-.*/,'');
+    var rtlcodes = ['ar','arc','dv','ha','he','khw','ks','ku','ps','ur','yi'];
+    return page.rtl || u.contains(rtlcodes, code);
+  }
+
+  hb.registerHelper('lang', function(frame) {
+    return 'lang="' + lang(this) + '"';
+  });
+
+
+  hb.registerHelper('rtl', function(frame) {
+    return 'dir="' + (rtl(this) ? 'rtl' : 'auto') + '"';
+  });
+
+  hb.registerHelper('body-class', function(frame) {
+    return 'class="' +
+      (this['body-class'] || 'list') +
+      ' ' + lang(this) + '"';
+  });
+
+  hb.registerHelper('noRobots', function(frame) {
+    if (opts.noRobots) {
+      return '<meta name="robots" content="noindex, nofollow">';
+    }
+  });
+
+  hb.registerHelper('extraCss', function(frame) {
+    if (opts.extraCss) {
+      return '<link rel="stylesheet" href="' +
+        u.relPath(this._href) +
+        opts.extraCss + '">';
+    }
+  });
+
+  function githubText(page) {
+    switch (lang(page)) {
+      case 'cn':    return 'Fork me on Github';
+      case 'de':    return 'Fork me on Github';
+      case 'es':    return 'Fork me on Github';
+      case 'fr':    return 'Forkez-moi sur GitHub';
+      case 'he':    return 'צור פיצול בGitHub';
+      case 'id':    return 'Fork saya di Github';
+      case 'jp':    return 'Fork me on Github';
+      case 'ko':    return 'Github에서 포크하기';
+      case 'pt-br': return 'Faça um fork no Github';
+      case 'pt-pt': return 'Faz fork no Github';
+      case 'ru':    return 'Fork me on Github';
+      case 'tr':    return 'Github üstünde Fork edin';
+      case 'uk':    return 'скопіювати на Github';
+      default:      return 'Fork me on Github';
+    }
+  }
+
+  hb.registerHelper('github', function(frame) {
+    if (opts.github) {
+      return u.format(
+        '<p class="badge"><a href="%s">%s</a></p>',
+        opts.github,
+        this['github-text'] || githubText(this)
+      );
+    }
+  });
+
+  hb.registerHelper('photoCredit', function(frame) {
+    if (this['photo-credit'] || opts.photoCredit) {
+      return '<!-- ' + u.escape(this['photo-credit'] || opts.photoCredit) + ' -->';
+    }
+  });
+
+  hb.registerHelper('copyright', function(frame) {
+    if (this.copyright || opts.copyright) {
+      return '<!-- ' + u.escape(this.copyright || opts.copyright) + ' -->';
+    }
   });
 
 }

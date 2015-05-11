@@ -1,24 +1,34 @@
-// to clone this example:
-// npm install the theme and
-// and replace '..' below with themes: 'pub-theme-shower-ribbon'
-
 var opts = module.exports = {
+
+  themes: 'shower-ribbon',
 
   sources: [
     {
-      path:'.',
-      glob:'*.md',
+      path:'./markdown',
+      glob:'**/*.md',
       fragmentDelim:'md-headings', // pub -m, required for this theme
-      css:'/css/extra.css',        // extra styles
       writable:true
     }
   ],
 
-  staticPaths: [
-    { path:'./images', route:'/images' },
-    { path:'./css',    route:'/css' }
-  ],
+  staticPaths: [ './static' ],
 
-  themes: '..'
+  // link for github badge
+  github: 'https://github.com/jldec/pub-theme-shower-ribbon',
 
+  // path to extra stylesheet
+  extraCss: '/css/extra.css',
+
+  // don't forget photo credit
+  photoCredit: 'Cover Photo by Jurgen Leschner, github.com/jldec',
+
+  // copyright comment
+  copyright: 'Copyright © 2015 Hard Working Person'
 }
+
+
+// *** remove below before committing to public repo ***
+
+// ask search engines not to crawl this site
+opts.noRobots = 'true';
+opts.staticPaths.push('./robots.txt');

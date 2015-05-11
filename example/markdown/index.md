@@ -1,10 +1,13 @@
-Intro text not included in presentation
+# Example Presentation
+Byline
 
-### Title
+
+## Title
 ![](/images/ice.jpg)
-sub-title
+Use the nav menu to switch between presentations
 
-### Slide 1: quote
+
+## Slide 1: quote
 
 > The overwhelming majority of theories are rejected
 because they contain bad explanations, not because they
@@ -13,10 +16,10 @@ fail experimental tests.
 david deutsch
 
 
-### Slide 2: No text
+## Slide 2: No text
 
 
-### Slide 3: Lists
+## Slide 3: Lists
 
 1. with with with with with with with
   - words words
@@ -26,7 +29,7 @@ david deutsch
 - nice nice nice nice nice nice
 
 
-### Slide 4: Table
+## Slide 4: Table
 
 | col1   | col2   |     col3 header |
 | ------ | ------ | --------------: |
@@ -34,3 +37,7 @@ david deutsch
 | abc    | def    |   right aligned |
 | abc    | def    |   right aligned |
 
+
+## credits
+[Vadim Makeev](https://github.com/pepelsbey):
+[Shower HTML presentation engine ](https://github.com/shower/shower)
