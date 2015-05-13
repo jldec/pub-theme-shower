@@ -76,17 +76,12 @@ module.exports = function(generator) {
 
   function githubText(page) {
     switch (lang(page)) {
-      case 'cn':    return 'Fork me on Github';
-      case 'de':    return 'Fork me on Github';
-      case 'es':    return 'Fork me on Github';
       case 'fr':    return 'Forkez-moi sur GitHub';
       case 'he':    return 'צור פיצול בGitHub';
       case 'id':    return 'Fork saya di Github';
-      case 'jp':    return 'Fork me on Github';
       case 'ko':    return 'Github에서 포크하기';
       case 'pt-br': return 'Faça um fork no Github';
       case 'pt-pt': return 'Faz fork no Github';
-      case 'ru':    return 'Fork me on Github';
       case 'tr':    return 'Github üstünde Fork edin';
       case 'uk':    return 'скопіювати на Github';
       default:      return 'Fork me on Github';

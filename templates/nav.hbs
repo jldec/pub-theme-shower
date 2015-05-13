@@ -1,5 +1,9 @@
 <nav id="nav">
 <ul><li>{{menu}}
-<ul>{{#eachPage}}<li>{{{pageLink}}}</li>{{/eachPage}}</ul>
+<ul>
+{{#eachPage~}}
+<li>{{{pageLink}}}</li>
+{{/eachPage~}}
+</ul>
 </li></ul>
 </nav>
