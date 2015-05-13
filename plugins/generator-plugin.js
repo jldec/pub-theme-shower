@@ -84,8 +84,8 @@ module.exports = function(generator) {
       case 'id':    return 'Fork saya di Github';
       case 'jp':    return 'Fork me on Github';
       case 'ko':    return 'Github에서 포크하기';
-      case 'pt-BR': return 'Faça um fork no Github';
-      case 'pt-PT': return 'Faz fork no Github';
+      case 'pt-br': return 'Faça um fork no Github';
+      case 'pt-pt': return 'Faz fork no Github';
       case 'ru':    return 'Fork me on Github';
       case 'tr':    return 'Github üstünde Fork edin';
       case 'uk':    return 'скопіювати на Github';
