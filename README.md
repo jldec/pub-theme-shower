@@ -63,7 +63,7 @@ To customize the theme styles, you can add your own to /static/css/extra.css
 ### sample markdown
 - this sample is included in the [repo](example).
 - to see the rendered presentation run `pub` in the `example` directory
-- to generate static html output, use `pub -O` 
+- to generate static html output, use `pub -O`
 - to serve static html output, use `pub -s .` in the `example/out` directory
 
 
