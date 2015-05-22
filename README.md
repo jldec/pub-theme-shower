@@ -11,7 +11,7 @@ The screenshot below shows the built-in pub-server editor (which still has a few
 ![](images/shower-screen.png)
 
 ### installation
-This theme requires pub-server v1.3
+This theme requires pub-server v1.4
 
 ```sh
 npm install -g pub-server
@@ -37,7 +37,7 @@ pub -m -t shower-ribbon -O
 ```
 
 - `-O` generates `presentation.html` and copies the rest of the static files into `./out`
-- this directory can be served by gh-pages or by running `pub -s .` in the output directory.
+- this directory can be served by gh-pages or by running `pub -S` in the output directory.
 
 
 
