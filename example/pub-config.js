@@ -1,6 +1,6 @@
 var opts = module.exports = {
 
-  themes: 'shower-ribbon',
+  themes: ['pub-theme-shower-ribbon', 'pub-seo']
 
   sources: [
     {
@@ -17,18 +17,14 @@ var opts = module.exports = {
   github: 'https://github.com/jldec/pub-theme-shower-ribbon',
 
   // path to extra stylesheet
-  extraCss: '/css/extra.css',
+  injectCss: '/css/extra.css',
 
   // don't forget photo credit
   photoCredit: 'Cover Photo by Jurgen Leschner, github.com/jldec',
 
   // copyright comment
   copyright: 'Copyright © 2015 Hard Working Person'
+
+  // ask search engines not to crawl this site
+  opts.noRobots = true;
 }
-
-
-// *** remove below before committing to public repo ***
-
-// ask search engines not to crawl this site
-opts.noRobots = 'true';
-opts.staticPaths.push('./robots.txt');

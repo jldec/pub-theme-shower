@@ -60,20 +60,6 @@ module.exports = function(generator) {
       ' ' + lang(this) + '"';
   });
 
-  hb.registerHelper('noRobots', function(frame) {
-    if (opts.noRobots) {
-      return '<meta name="robots" content="noindex, nofollow">';
-    }
-  });
-
-  hb.registerHelper('extraCss', function(frame) {
-    if (opts.extraCss) {
-      return '<link rel="stylesheet" href="' +
-        u.relPath(this._href) +
-        opts.extraCss + '">';
-    }
-  });
-
   function githubText(page) {
     switch (lang(page)) {
       case 'fr':    return 'Forkez-moi sur GitHub';
@@ -104,10 +90,5 @@ module.exports = function(generator) {
     }
   });
 
-  hb.registerHelper('copyright', function(frame) {
-    if (this.copyright || opts.copyright) {
-      return '<!-- ' + u.escape(this.copyright || opts.copyright) + ' -->';
-    }
-  });
 
 }

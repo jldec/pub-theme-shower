@@ -11,7 +11,7 @@ The screenshot below shows the built-in pub-server editor (which still has a few
 ![](images/shower-screen.png)
 
 ### installation
-This theme requires pub-server v1.4
+This theme requires pub-server v1.5
 
 ```sh
 npm install -g pub-server
@@ -25,7 +25,7 @@ npm install -g pub-server
 ```sh
 npm install pub-theme-shower-ribbon
 
-pub -m -t shower-ribbon
+pub -m -t pub-theme-shower-ribbon
 ```
 
 - open your browser on http://localhost:3001/
@@ -33,7 +33,7 @@ pub -m -t shower-ribbon
 - `-t shower-ribbon` loads pub-theme-shower-ribbon if you have npm installed it.
 
 ```sh
-pub -m -t shower-ribbon -O
+pub -m -t pub-theme-shower-ribbon -O
 ```
 
 - `-O` generates `presentation.html` and copies the rest of the static files into `./out`
@@ -53,7 +53,7 @@ npm init
 npm install --save pub-theme-shower-ribbon
 ```
 
-Now you can use `pub` and `pub -O`, instead of having to append `-m -t shower-ribbon` every time.
+Now you can use `pub` and `pub -O`, instead of having to append `-m -t pub-theme-shower-ribbon` every time.
 
 Replace the files in /markdown and /static/images with your own.
 
@@ -63,8 +63,8 @@ To customize the theme styles, you can add your own to /static/css/extra.css
 ### sample markdown
 - this sample is included in the [repo](example).
 - to see the rendered presentation run `pub` in the `example` directory
-- to generate static html output, use `pub -O`
-- to serve static html output, use `pub -s .` in the `example/out` directory
+- to generate static html output in example/out, use `pub -O`
+- to serve just the generated html, use `pub -S out`
 
 
 - The heading at the very top the file becomes the name of the presentation (e.g. in the nav menu)
@@ -114,31 +114,39 @@ david deutsch
 Instead of command line parameters, you can use pub-config.js to configure
 the theme, and say a source of images e.g. for the cover
 
-By providing a value for `extraCss` you can inject an additional stylesheet.
+By providing a value for `injectCss` you can inject an additional stylesheet.
 
 ```js
 var opts = module.exports = {
+
+  themes: ['pub-theme-shower-ribbon', 'pub-seo']
+
   sources: [
-  { path:'./markdown',
-    glob:'**/*.md',
-    fragmentDelim:'md-headings', // pub -m, required for this theme
-    writable:true } ],
-  staticPaths: './static',
-  themes: 'shower-ribbon',
+    {
+      path:'./markdown',
+      glob:'**/*.md',
+      fragmentDelim:'md-headings', // pub -m, required for this theme
+      writable:true
+    }
+  ],
+
+  staticPaths: [ './static' ],
+
+  // link for github badge
+  github: 'https://github.com/jldec/pub-theme-shower-ribbon',
 
   // path to extra stylesheet
-  extraCss: '/css/extra.css',
+  injectCss: '/css/extra.css',
 
-  // other config options
-  github: 'https://github.com/jldec/pub-theme-shower-ribbon',
+  // don't forget photo credit
   photoCredit: 'Cover Photo by Jurgen Leschner, github.com/jldec',
-  copyright: 'Copyright © 2015 Hard Working Person'
-}
 
-// *** remove below before committing to public repo ***
-// ask search engines not to crawl this site
-opts.noRobots = 'true';
-opts.staticPaths.push('./robots.txt');
+  // copyright comment
+  copyright: 'Copyright © 2015 Hard Working Person'
+
+  // ask search engines not to crawl this site
+  opts.noRobots = true;
+}
 ```
 
 
