@@ -11,7 +11,7 @@ The screenshot below shows the built-in pub-server editor (which still has a few
 ![](images/shower-screen.png)
 
 ### installation
-This theme requires pub-server v1.5
+This theme requires pub-server v1.6.0 or later.
 
 ```sh
 npm install -g pub-server
@@ -119,7 +119,7 @@ By providing a value for `injectCss` you can inject an additional stylesheet.
 ```js
 var opts = module.exports = {
 
-  themes: ['pub-theme-shower-ribbon', 'pub-seo']
+  pkgs: ['pub-theme-shower-ribbon', 'pub-pkg-seo']
 
   sources: [
     {
