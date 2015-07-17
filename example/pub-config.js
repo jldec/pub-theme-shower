@@ -1,6 +1,6 @@
 var opts = module.exports = {
 
-  pkgs: ['pub-theme-shower-ribbon', 'pub-pkg-seo']
+  pkgs: ['pub-theme-shower-ribbon', 'pub-pkg-seo'],
 
   sources: [
     {
@@ -23,8 +23,8 @@ var opts = module.exports = {
   photoCredit: 'Cover Photo by Jurgen Leschner, github.com/jldec',
 
   // copyright comment
-  copyright: 'Copyright © 2015 Hard Working Person'
+  copyright: 'Copyright © 2015 Hard Working Person',
 
   // ask search engines not to crawl this site
-  opts.noRobots = true;
+  noRobots: true
 }

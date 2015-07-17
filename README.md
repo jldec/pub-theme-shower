@@ -10,65 +10,42 @@ When you are ready to publish, run `pub -O` to generate a set of html output and
 The screenshot below shows the built-in pub-server editor (which still has a few quirks).
 ![](images/shower-screen.png)
 
-### installation
-This theme requires pub-server v1.6.0 or later.
+### tl;dr
+The quickest way to start writing your own presentations using this theme is to clone the [pub-sample-deck](https://github.com/jldec/pub-server) repo from github.
+
+`npm install` will also install pub-server in the same directory.
+
+```sh
+git clone git@github.com:jldec/pub-sample-deck.git
+cd pub-sample-deck
+npm install
+pub
+```
+
+
+#### If you have installed pub-server globally first
 
 ```sh
 npm install -g pub-server
 ```
-
-
-#### to edit a single presentation, and serve a preview while you edit
-
-- create your `presentation.md` in a new directory, then:
+Create your `presentation.md` in a new directory, then:
 
 ```sh
 npm install pub-theme-shower-ribbon
-
 pub -m -t pub-theme-shower-ribbon
 ```
 
-- open your browser on http://localhost:3001/
 - `-m`: interprets markdown headings as fragments
 - `-t shower-ribbon` loads pub-theme-shower-ribbon if you have npm installed it.
 
-```sh
-pub -m -t pub-theme-shower-ribbon -O
-```
 
-- `-O` generates `presentation.html` and copies the rest of the static files into `./out`
-- this directory can be served by gh-pages or by running `pub -S` in the output directory.
+Now open your browser on http://localhost:3001/
 
 
-
-### to configure the theme and simplify command line usage
-
-Use a pub-config file or make a copy of the example folder
-
-```sh
-git clone git@github.com:jldec/pub-theme-shower-ribbon.git
-cp -R pub-theme-shower-ribbon/example <my-new-presentation-folder>
-cd <my-new-presentation-folder>
-npm init
-npm install --save pub-theme-shower-ribbon
-```
-
-Now you can use `pub` and `pub -O`, instead of having to append `-m -t pub-theme-shower-ribbon` every time.
-
-Replace the files in /markdown and /static/images with your own.
-
-To customize the theme styles, you can add your own to /static/css/extra.css
-
-
-### sample markdown
-- this sample is included in the [repo](example).
-- to see the rendered presentation run `pub` in the `example` directory
-- to generate static html output in example/out, use `pub -O`
-- to serve just the generated html, use `pub -S out`
-
-
-- The heading at the very top the file becomes the name of the presentation (e.g. in the nav menu)
-- The second heading is interpreted as a cover slide if it is followed by a markdown `![](image)`
+### markdown
+- a sample presentation is included in the [example](example) folder.
+- The heading at the very top the file becomes the name of the presentation
+- The second heading is interpreted as a cover slide if it is followed by `![](image)`
 - A slide with no text (slide 2 below) will be rendered with *shout* style (large centered text)
 
 
@@ -119,7 +96,7 @@ By providing a value for `injectCss` you can inject an additional stylesheet.
 ```js
 var opts = module.exports = {
 
-  pkgs: ['pub-theme-shower-ribbon', 'pub-pkg-seo']
+  pkgs: ['pub-theme-shower-ribbon', 'pub-pkg-seo'],
 
   sources: [
     {
@@ -142,10 +119,10 @@ var opts = module.exports = {
   photoCredit: 'Cover Photo by Jurgen Leschner, github.com/jldec',
 
   // copyright comment
-  copyright: 'Copyright © 2015 Hard Working Person'
+  copyright: 'Copyright © 2015 Hard Working Person',
 
   // ask search engines not to crawl this site
-  opts.noRobots = true;
+  noRobots:true
 }
 ```
 
