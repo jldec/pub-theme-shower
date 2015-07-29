@@ -7,10 +7,6 @@
 /* don't go crazy with whitespace after a p */
 .slide p { margin: 0 0 25px; }
 
-/* numbers and bullets need a bit of padding */
-.slide ol li:before, .slide ul li:before {
-  padding-right: 0.2em;
-}
 
 /* headings */
 
