@@ -13,13 +13,12 @@ The screenshot below shows the built-in pub-server editor (which still has a few
 ### tl;dr
 The quickest way to start writing your own presentations using this theme is to clone the [pub-sample-deck](https://github.com/jldec/pub-server) repo from github.
 
-`npm install` will also install pub-server in the same directory.
+This will also install pub-server in the same directory.
 
 ```sh
-git clone git@github.com:jldec/pub-sample-deck.git
+git clone https://github.com/jldec/pub-sample-deck.git
 cd pub-sample-deck
 npm install
-pub
 ```
 
 
