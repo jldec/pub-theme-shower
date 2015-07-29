@@ -1,6 +1,6 @@
 {
   "name": "pub-theme-shower-ribbon",
-  "version": "1.4.2",
+  "version": "1.5.0",
   "description": "shower presentation theme for pub-server",
   "main": "pub-config.js",
   "dependencies": {

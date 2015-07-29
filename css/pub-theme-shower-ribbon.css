@@ -17,8 +17,43 @@
 
 .slide strong {font-weight:800;}
 
+.slide img[full] {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width:1024px;
+}
+
+.slide.background-image,
+.slide.background-image h1,
+.slide.background-image h2,
+.slide.background-image h3,
+.slide.background-image h4,
+.slide.background-image h5
+{
+  color: #fff;
+}
+
+.slide.background-image > div > div {
+  background-color: rgba(0, 0, 0, 0.3);
+  margin: 0 -5em;
+  padding: 0 5em;
+}
+
+.slide img[align=right] {
+  margin-left:1em;
+}
+
+.slide img[align=left] {
+  margin-right:2em;
+}
+
+.slide  {
+  z-index: 1;
+}
+
 /* fixes a problem with clipped edit button when there are not many slides */
 @media screen {
 .list { clip:auto; }
 }
-

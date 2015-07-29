@@ -12,19 +12,33 @@ module.exports = function(generator) {
 
       // if no text below markdown heading use 'shout' class
       u.each(page._fragments, function(fragment) {
+        if (fragment['background-image']) {
+          fragment.class = (fragment.class || '') + ' background-image';
+        }
         if (0 === u.trim(fragment._txt.replace(/^.*$/m,'')).length) {
-          fragment.class = ' shout';
+          fragment.class = (fragment.class || '') + ' shout';
         }
       });
 
       // if first slide contains an image, use 'cover' class
       var first = page._fragments && page._fragments[0];
       if (first && /^\!\[/m.test(first._txt)) {
-        page._fragments[0].class = ' cover';
+        page._fragments[0].class = (page._fragments[0].class || '') + ' cover';
       }
 
     });
   });
+
+  hb.registerHelper('background-image', function(frame) {
+    var bgImg = this['background-image'];
+    if (bgImg) {
+      return '<img src="' + relPath(frame) + u.escape(bgImg) + '" full="1">';
+    }
+  });
+
+  function relPath(frame) {
+    return hb.renderOpts(frame).relPath || '';
+  }
 
   // prevent single-page navigation in editor - main-layout is page-sensitive
   generator.on('update-view', function(path, query, hash, nav) {
