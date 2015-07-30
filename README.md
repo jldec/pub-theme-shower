@@ -120,7 +120,7 @@ var opts = module.exports = {
   // copyright comment
   copyright: 'Copyright © 2015 Hard Working Person',
 
-  // ask search engines not to crawl this site
+  // ask search engines not to crawl this site (depends on pub-pkg-seo)
   noRobots:true
 }
 ```
