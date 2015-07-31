@@ -11,7 +11,7 @@ The screenshot below shows the built-in pub-server editor (which still has a few
 ![](images/shower-screen.png)
 
 ### tl;dr
-The quickest way to start writing your own presentations using this theme is to clone the [pub-sample-deck](https://github.com/jldec/pub-server) repo from github.
+The quickest way to start writing your own presentations using this theme is to clone the [pub-sample-deck](https://github.com/jldec/pub-sample-deck) repo from github.
 
 This will also install pub-server in the same directory.
 
