@@ -1,15 +1,12 @@
 /* shower customizations */
 
-
 /* make bold text bolder */
 .slide strong {font-weight:800;}
 
 /* don't go crazy with whitespace after a p */
 .slide p { margin: 0 0 25px; }
 
-
 /* headings */
-
 .slide h1,
 .slide h2,
 .slide h3,
@@ -47,7 +44,6 @@
 
 
 /* background images */
-
 .slide img[full] {
   position: absolute;
   top: 0;
@@ -76,10 +72,17 @@
   z-index: 1;
 }
 
-
 /* inline images */
 .slide img[align=right] { margin-left:1em; }
 .slide img[align=left] { margin-right:2em; }
+
+/* code */
+.slide pre code {
+  width: 120%;
+  font-size: 0.8em;
+  line-height: 1.8;
+  overflow: hidden;
+}
 
 /* nav button */
 #nav > ul { position:fixed; left:15px; top:15px; z-index:100; }
