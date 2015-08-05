@@ -34,6 +34,15 @@ module.exports = function(generator) {
     });
   });
 
+  // re-initialize shower except when only html is updated - runs in editor
+  generator.on('update-view', function(path, query, hash, window, $el) {
+    if ($el.attr('data-render-html')) return;
+    window.$('.live-region').remove();
+    window.shower.slideList = [];
+    window.shower.init();
+    window.shower.run();
+  });
+
   hb.registerHelper('background-image', function(frame) {
     var bgImg = this['background-image'];
     if (bgImg) return renderImg(bgImg, 'full=1', '');
