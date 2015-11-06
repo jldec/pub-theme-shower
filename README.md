@@ -21,26 +21,6 @@ cd pub-sample-deck
 npm install
 ```
 
-
-#### If you have installed pub-server globally first
-
-```sh
-npm install -g pub-server
-```
-Create your `presentation.md` in a new directory, then:
-
-```sh
-npm install pub-theme-shower-ribbon
-pub -m -t pub-theme-shower-ribbon
-```
-
-- `-m`: interprets markdown headings as fragments
-- `-t shower-ribbon` loads pub-theme-shower-ribbon if you have npm installed it.
-
-
-Now open your browser on http://localhost:3001/
-
-
 ### markdown
 - a sample presentation is included in the [example](example) folder.
 - The heading at the very top the file becomes the name of the presentation
@@ -101,7 +81,7 @@ var opts = module.exports = {
     {
       path:'./markdown',
       glob:'**/*.md',
-      fragmentDelim:'md-headings', // pub -m, required for this theme
+      fragmentDelim:'md-headings', // required for this theme
       writable:true
     }
   ],
