@@ -1,14 +1,13 @@
 var opts = module.exports = {
 
-  pkgs: ['pub-theme-shower-ribbon', 'pub-pkg-seo'],
+  // to use this in a directory not inside pub-theme-shower-ribbon
+  // create package.json which loads the theme, and replace '..' below with
+  // 'pub-theme-shower-ribbon'
+  pkgs: ['..', 'pub-pkg-seo'],
 
   sources: [
-    {
-      path:'./markdown',
-      glob:'**/*.md',
-      fragmentDelim:'md-headings', // required for this theme
-      writable:true
-    }
+    { path:'./markdown/index.md', fragmentDelim:'md-headings', writable:true },
+    { path:'./markdown/presentation-2.md', writable:true }
   ],
 
   staticPaths: [ './static' ],

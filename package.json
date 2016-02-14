@@ -1,11 +1,11 @@
 {
   "name": "pub-theme-shower-ribbon",
-  "version": "1.7.1",
+  "version": "1.7.2",
   "description": "shower presentation theme for pub-server",
   "main": "pub-config.js",
   "dependencies": {
-    "shower-core": "^1.0.7",
-    "shower-ribbon": "^1.0.11"
+    "shower-core": "~1.0.7",
+    "shower-ribbon": "~1.0.11"
   },
   "repository": {
     "type": "git",

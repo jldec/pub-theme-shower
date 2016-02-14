@@ -1,7 +1,7 @@
 # pub-theme-shower-ribbon
 The [shower](https://github.com/shower/shower) theme for
 [pub-server](https://github.com/jldec/pub-server) makes it easy to create
-HTML presentations using markdown.
+HTML presentations using markdown. Markdown headings can serve to delimit slides.
 
 Edit the markdown in any text editor and use the watch feature of pub-server to auto-update a browser preview the file is saved.
 
@@ -22,89 +22,23 @@ npm install
 ```
 
 ### markdown
-- a sample presentation is included in the [example](example) folder.
-- The heading at the very top the file becomes the name of the presentation
-- The second heading is interpreted as a cover slide if it is followed by `![](image)`
-- A slide with no text (slide 2 below) will be rendered with *shout* style (large centered text)
+2 sample presentations are included in this repo's [example](example) folder.
+
+The first source in pub-config has `fragmentDelim:'md-headings'`. This causes each markdown heading to be treated as the beginning of a new slide (and also serve as the heading for that slide.) The heading at the very top of the file becomes the name of the presentation.
+
+In order to use fragment metadata for slide-specific background images, or to enable the use of additional markdown headings inside slides, separate each slide in the markdowns with a fragment delimiter. Use a name property on the first slide for the presentation name.
 
 
-```markdown
-# Example Presentation
-Byline
+```md
+---- #fragment-name ----
+background-image: /path/to/image.jpg
 
-## Title
-![](/images/ice.jpg)
-Use the nav menu to switch between presentations
-
-## Slide 1: quote
-
-> The overwhelming majority of theories are rejected
-because they contain bad explanations, not because they
-fail experimental tests.
-
-david deutsch
-
-## Slide 2: No text
-
-## Slide 3: Lists
-
-1. with with with with with with with
-  - words words
-  - words words
-  - words words
-  - words words
-- nice nice nice nice nice nice
-
-## Slide 4: Table
-
-| col1   | col2   |     col3 header |
-| ------ | ------ | --------------: |
-| abc    | def    |   right aligned |
-| abc    | def    |   right aligned |
-| abc    | def    |   right aligned |
+markdown starts after a blank line
 ```
 
+In either case, the second slide is interpreted as a cover slide with a background image, if it starts with an `![](image)` link.
 
-### sample `pub-config.js` configuration
-
-Instead of command line parameters, you can use pub-config.js to configure
-the theme, and say a source of images e.g. for the cover
-
-By providing a value for `injectCss` you can inject an additional stylesheet.
-
-```js
-var opts = module.exports = {
-
-  pkgs: ['pub-theme-shower-ribbon', 'pub-pkg-seo'],
-
-  sources: [
-    {
-      path:'./markdown',
-      glob:'**/*.md',
-      fragmentDelim:'md-headings', // required for this theme
-      writable:true
-    }
-  ],
-
-  staticPaths: [ './static' ],
-
-  // link for github badge
-  github: 'https://github.com/jldec/pub-theme-shower-ribbon',
-
-  // path to extra stylesheet
-  injectCss: '/css/extra.css',
-
-  // don't forget photo credit
-  photoCredit: 'Cover Photo by Jurgen Leschner, github.com/jldec',
-
-  // copyright comment
-  copyright: 'Copyright © 2015 Hard Working Person',
-
-  // ask search engines not to crawl this site (depends on pub-pkg-seo)
-  noRobots:true
-}
-```
-
+A slide with no text will be rendered with *shout* style (large centered text)
 
 ### credits
 - [Vadim Makeev](https://github.com/pepelsbey):
