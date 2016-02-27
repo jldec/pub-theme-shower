@@ -45,7 +45,7 @@ module.exports = function(generator) {
 
   hb.registerHelper('background-image', function(frame) {
     var bgImg = this['background-image'];
-    if (bgImg) return renderImg(bgImg, 'full=1', '');
+    if (bgImg) return generator.renderImage(hb.renderOpts({ href:bgImg, title: 'full=1'}));
   });
 
   hb.registerHelper('menu', function(frame) {
