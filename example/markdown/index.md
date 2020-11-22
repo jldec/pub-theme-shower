@@ -1,23 +1,16 @@
 # Example Presentation
-Byline
 
-
-## Title
-![](/images/ice.jpg)
-Use the nav menu to switch between presentations
-
+## Example Presentation
+![](/images/ice.jpg ".cover height")
 
 ## Slide 1: quote
-
 > The overwhelming majority of theories are rejected
-because they contain bad explanations, not because they
-fail experimental tests.
+> because they contain bad explanations, not because they
+> fail experimental tests.
 
-david deutsch
-
+David Deutsch
 
 ## Slide 2: No text
-
 
 ## Slide 3: Lists
 
@@ -28,6 +21,11 @@ david deutsch
   - words words
 - nice nice nice nice nice nice
 
+## ! ! to shout
+
+## !+ !+ to shout out
+
+## !- !- to shout in
 
 ## Slide 4: Table
 

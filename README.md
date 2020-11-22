@@ -1,7 +1,26 @@
-# pub-theme-shower-ribbon
+# pub-theme-shower
 The [shower](https://github.com/shower/shower) theme for
 [pub-server](https://github.com/jldec/pub-server) makes it easy to create
 HTML presentations using markdown. Markdown headings can serve to delimit slides.
+
+This theme replaces [pub-theme-shower-ribbon](https://www.npmjs.com/package/pub-theme-shower-ribbon) which is now deprecated.
+
+### The main differences compared to old theme are:
+
+- Choose between the [Material](https://github.com/shower/material/) and the [Ribbon](https://github.com/shower/ribbon/) presentation themes.
+  The latter is the default. To select Material add `material: 1` to the page header.
+
+- Choose between wide (16/9) and traditional (4/3) aspect ratio.
+  The latter is the default. To select wide add `wdie: 1` to the page header.
+
+- To make headings shouty, use `# ! heading text` (on any heading level).
+  Adding a `+` or `-` after the `!` animates the text to grow or shrink (only in the ribbon theme).
+
+- Background images can be controlled by inserting markdown images with title text starting with `.cover width` or `.cover height`. 
+  E.g. `![](/images/ice.jpg ".cover width")`. 
+  Alternatively add a `background-image: /images/ice.jpg`  to the slide fragment which auto-inserts `.cover width`.
+
+### Usage
 
 Edit the markdown in any text editor and use the watch feature of pub-server to auto-update a browser preview the file is saved.
 
@@ -35,10 +54,6 @@ background-image: /path/to/image.jpg
 
 markdown starts after a blank line
 ```
-
-In either case, the second slide is interpreted as a cover slide with a background image, if it starts with an `![](image)` link.
-
-A slide with no text will be rendered with *shout* style (large centered text)
 
 ### credits
 - [Vadim Makeev](https://github.com/pepelsbey):

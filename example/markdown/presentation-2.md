@@ -1,21 +1,30 @@
----- ----
-name: 2nd Presentation
+---- /presentation-2 ----
+material: 1
+wide: 1
+
+---- #slide-1 ----
+
+![](/images/ice.jpg ".cover width")
+# Presentation 2
+### Explicit markdown fragment per slide
 
 
----- #slide1 ----
+---- #theme ----
 
-![](/images/ice.jpg)
-## Presentation 2
-Use the nav menu to switch between presentations
+# Theme and aspect ratio
+Specified in page header
+```
+material: 1
+wide: 1
+```
 
+---- #quote ----
 
----- ----
-
-## This presentation is shorter
+# This presentation is shorter
 
 > stylish quote
 
----- ----
+---- #outline ----
 background-image: /images/ice.jpg
 
 # Heading Level 1
@@ -24,7 +33,11 @@ background-image: /images/ice.jpg
 #### Level 4
 ##### Level 5
 
----- ----
+---- #shout ----
+
+## ! shout
+
+---- #credits ----
 
 ## credits
 [Vadim Makeev](https://github.com/pepelsbey):

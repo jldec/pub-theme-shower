@@ -1,11 +1,10 @@
 {
-  "name": "pub-theme-shower-ribbon",
-  "version": "1.7.4",
+  "name": "pub-theme-shower",
+  "version": "2.0.0",
   "description": "shower presentation theme for pub-server",
   "main": "pub-config.js",
   "dependencies": {
-    "shower-core": "^1.0.7",
-    "shower-ribbon": "^1.0.11"
+    "@shower/shower": "^3.0.0"
   },
   "files": [
     "css/",
@@ -15,7 +14,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/jldec/pub-theme-shower-ribbon.git"
+    "url": "https://github.com/jldec/pub-theme-shower.git"
   },
   "author": "jurgen leschner",
   "license": "MIT"
