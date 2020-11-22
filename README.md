@@ -11,7 +11,7 @@ This theme replaces [pub-theme-shower-ribbon](https://www.npmjs.com/package/pub-
   The latter is the default. To select Material add `material: 1` to the page header.
 
 - Choose between wide (16/9) and traditional (4/3) aspect ratio.
-  The latter is the default. To select wide add `wdie: 1` to the page header.
+  The latter is the default. To select wide add `wide: 1` to the page header.
 
 - To make headings shouty, use `# ! heading text` (on any heading level).
   Adding a `+` or `-` after the `!` animates the text to grow or shrink (only in the ribbon theme).
