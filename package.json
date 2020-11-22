@@ -1,6 +1,6 @@
 {
   "name": "pub-theme-shower",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "shower presentation theme for pub-server",
   "main": "pub-config.js",
   "dependencies": {
