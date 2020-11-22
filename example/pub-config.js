@@ -15,7 +15,12 @@ var opts = module.exports = {
       relPaths: true }
     ],
 
-  staticPaths: [ './static' ],
+  staticPaths: [
+    './static',
+    './.gitignore',
+    './.nojekyll',
+    './CNAME'
+    ],
 
   // link for github badge
   github: 'https://github.com/jldec/pub-theme-shower',
